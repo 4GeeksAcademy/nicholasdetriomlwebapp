@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris - Model prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        h3 {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Introduce the values</h2>
+    
+    <form action="/" method="post">
+        School Setting: <select name="val1" required>
+            <option value="" disabled selected>Select School Setting</option>
+            <option value="1">Urban</option>
+            <option value="2">Suburban</option>
+            <option value="3">Rural</option>
+        </select><br><br>
+
+        School Type:  <select name="val2" required>
+            <option value="" disabled selected>Select School Type</option>
+            <option value="1">Public</option>
+            <option value="2">Non-public</option>
+        </select><br><br>
+
+        Teaching Method:  <select name="val3" required>
+            <option value="" disabled selected>Select Teaching Method</option>
+            <option value="1">Standard</option>
+            <option value="2">Experimental</option>
+        </select><br><br>
+
+        Number of Students (in class): <input type="number" step="any" name="val4" required><br><br>
+
+        Gender: <select name="val5" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br><br>
+
+        Lunch: <select name="val6" required>
+            <option value="" disabled selected>Select Lunch Option</option>
+            <option value="0">Does not qualify</option>
+            <option value="1">Qualifies for reduced/free lunch</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction != None %}
+        <h3>Prediction of score difference: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
