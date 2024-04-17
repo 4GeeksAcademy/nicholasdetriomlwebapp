@@ -19,6 +19,7 @@ def preprocess_input(val1, val2, val3, val4, val5):
     "gender": [val4],
     "lunch": [val5]
     }
+    print(input_dict)
     
     # Convert dictionary to DataFrame
     input_df = DataFrame(input_dict)
